@@ -15,7 +15,7 @@ elif [ $1 == "-u" ]; then
 else
     echo "welcome to my test script......... I will try to ssh into the servers that you specify in the above arrays....Here I go!"
    for i in ${!usernames[@]}; do
-      ssh -t -p 22 ${usernames[$i]}@${hosts[$i]} "chmod +x updatenow.sh; ./updatenow.sh" 
+      ssh -t -p 22 ${usernames[$i]}@${hosts[$i]} "./updatenow.sh" 
       echo " Done with this machine"
     done
 fi
